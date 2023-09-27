@@ -1,0 +1,79 @@
+.component--steps .component__close-btn {
+    position: absolute;
+    top: 2.4rem;
+    right: 3.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2.4rem;
+    color: inherit;
+}
+
+.component--steps .component__close-btn:hover {
+    color: #4d2fa7;
+}
+
+.component--steps .component__steps {
+    width: 100%;
+    max-width: 60rem;
+    background-color: #f7f7f7;
+    border-radius: 1.6rem;
+    padding: 2.5rem;
+}
+
+.component--steps .steps__numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.component--steps .steps__numbers > div {
+    height: 4rem;
+    aspect-ratio: 1;
+    background-color: #e7e7e7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.component--steps .steps__numbers .steps__active {
+    background-color: #7950f2;
+    color: #fff;
+}
+
+.component--steps .steps__message {
+    text-align: center;
+    font-size: 2rem;
+    margin: 4rem 0;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.component--steps .steps__btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.component--steps .steps__btns button {
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: bold;
+    background-color: #7950f2;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.component--steps .steps__btns button span {
+    margin-bottom: 5px;
+}

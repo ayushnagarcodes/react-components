@@ -1,0 +1,28 @@
+.component--tip-calculator .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.component--tip-calculator .input-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.component--tip-calculator input,
+.component--tip-calculator select,
+.component--tip-calculator button {
+    font-size: 16px;
+    padding: 0.4rem 1rem;
+    text-align: center;
+}
+
+.component--tip-calculator button {
+    border-radius: 0.6rem;
+}
+
+.component--tip-calculator .output p {
+    font-weight: 500;
+    font-size: 20px;
+}

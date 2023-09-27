@@ -1,0 +1,34 @@
+.component--stars .container {
+    width: 100%;
+}
+
+.component--stars .input {
+    text-align: center;
+}
+
+.component--stars input {
+    font-size: 16px;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    margin-left: 1.2rem;
+}
+
+.component--stars .stars {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40px);
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+}
+
+.component--stars .stars span {
+    font-size: 4rem;
+    color: #ffd500;
+    line-height: 1;
+}
+
+.component--stars .stars svg {
+    cursor: pointer;
+    width: 100%;
+}
