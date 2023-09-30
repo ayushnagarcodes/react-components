@@ -4,6 +4,7 @@ import "./StarRating.css";
 export default function StarRating() {
     const [numStars, setNumStars] = useState(3);
     const [rating, setRating] = useState(0);
+    const [tempRating, setTempRating] = useState(0);
 
     return (
         <article className="component component--stars">
@@ -20,17 +21,23 @@ export default function StarRating() {
                         onChange={(e) => {
                             setNumStars(Number(e.target.value));
                             setRating(0);
+                            setTempRating(0);
                         }}
                     />
                 </div>
 
                 <div className="stars">
                     {Array.from({ length: numStars }, (_, i) => (
-                        <div key={i + 1} onClick={() => setRating(i + 1)}>
-                            {i + 1 <= rating ? <FullStar /> : <EmptyStar />}
+                        <div
+                            key={i + 1}
+                            onClick={() => setRating(i + 1)}
+                            onMouseEnter={() => setTempRating(i + 1)}
+                            onMouseLeave={() => setTempRating(rating)}
+                        >
+                            {i + 1 <= tempRating ? <FullStar /> : <EmptyStar />}
                         </div>
                     ))}
-                    <span>{rating}</span>
+                    <span>{tempRating}</span>
                 </div>
             </div>
         </article>

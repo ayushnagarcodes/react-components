@@ -17,7 +17,6 @@
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, 40px);
-    gap: 2rem;
     justify-items: center;
     justify-content: center;
 }

@@ -1,0 +1,24 @@
+.component--text-expander p {
+    display: block;
+}
+
+.component--text-expander .container.active p {
+    display: flex;
+    align-items: center;
+}
+
+.component--text-expander .container.active span {
+    display: inline-block;
+    width: 30ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.component--text-expander button {
+    font: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(11, 11, 150);
+}
