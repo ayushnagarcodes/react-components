@@ -13,9 +13,7 @@ export default function DateCounterV2() {
     }
 
     return (
-        <article className="component component--date-counter-v2">
-            <h1>Date Counter v2</h1>
-
+        <>
             <div className="container container--steps">
                 <input
                     type="range"
@@ -73,6 +71,6 @@ export default function DateCounterV2() {
                     Reset
                 </button>
             )}
-        </article>
+        </>
     );
 }

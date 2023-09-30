@@ -44,24 +44,19 @@ export default function Flashcards() {
     }
 
     return (
-        <article className="component component--flashcards">
-            <h1>Flashcards</h1>
-            <div className="grid-container">
-                {questions.map((obj) => (
-                    <div
-                        className={`container ${
-                            selectedId === obj.id ? "active" : ""
-                        }`}
-                        data={obj}
-                        onClick={() => handleActive(obj.id)}
-                        key={obj.id}
-                    >
-                        <p>
-                            {selectedId === obj.id ? obj.answer : obj.question}
-                        </p>
-                    </div>
-                ))}
-            </div>
-        </article>
+        <div className="grid-container">
+            {questions.map((obj) => (
+                <div
+                    className={`container ${
+                        selectedId === obj.id ? "active" : ""
+                    }`}
+                    data={obj}
+                    onClick={() => handleActive(obj.id)}
+                    key={obj.id}
+                >
+                    <p>{selectedId === obj.id ? obj.answer : obj.question}</p>
+                </div>
+            ))}
+        </div>
     );
 }

@@ -7,9 +7,7 @@ export default function StarRating() {
     const [tempRating, setTempRating] = useState(0);
 
     return (
-        <article className="component component--stars">
-            <h1>Stars</h1>
-
+        <>
             <div className="container">
                 <div className="input">
                     <label>Enter number of stars to display: </label>
@@ -19,7 +17,11 @@ export default function StarRating() {
                         min={1}
                         max={20}
                         onChange={(e) => {
-                            setNumStars(Number(e.target.value));
+                            setNumStars(
+                                Number(e.target.value) > 20
+                                    ? 20
+                                    : Number(e.target.value)
+                            );
                             setRating(0);
                             setTempRating(0);
                         }}
@@ -40,7 +42,7 @@ export default function StarRating() {
                     <span>{tempRating}</span>
                 </div>
             </div>
-        </article>
+        </>
     );
 }
 

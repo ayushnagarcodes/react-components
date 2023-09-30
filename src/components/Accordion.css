@@ -1,17 +1,14 @@
-.component--accordion {
-}
-
 .component--accordion .accordion {
     width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 2.4rem;
 }
 
 .component--accordion .item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    padding: 20px 24px;
-    padding-right: 48px;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+    padding: 2rem 2.4rem;
+    padding-right: 4.8rem;
     cursor: pointer;
     border-top: 4px solid #fff;
     border-bottom: 4px solid #fff;
@@ -19,25 +16,28 @@
 
     display: grid;
     grid-template-columns: auto 1fr auto;
-    column-gap: 24px;
+    column-gap: 2.4rem;
     align-items: center;
 }
 
 .component--accordion .number {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
     color: #ced4da;
 }
 
 .component--accordion .title,
 .component--accordion .icon {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 .component--accordion .content-box {
     grid-column: 2 / -1;
-    padding-bottom: 16px;
+    padding: 1.6rem 0;
     line-height: 1.6;
     margin: 0;
 }
@@ -50,4 +50,10 @@
 .component--accordion .open .number,
 .component--accordion .open .title {
     color: #854faf;
+}
+
+@media screen and (max-width: 500px) {
+    .component--accordion .accordion {
+        width: 100%;
+    }
 }

@@ -1,19 +1,20 @@
 .component--tip-calculator .container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 2.4rem;
 }
 
 .component--tip-calculator .input-container {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .component--tip-calculator input,
 .component--tip-calculator select,
 .component--tip-calculator button {
-    font-size: 16px;
+    font-size: 1.6rem;
     padding: 0.4rem 1rem;
     text-align: center;
 }
@@ -24,5 +25,16 @@
 
 .component--tip-calculator .output p {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 50rem) {
+    .component--tip-calculator .container {
+        width: 90%;
+        gap: 2.8rem;
+    }
+
+    .component--tip-calculator .input-container {
+        gap: 1.2rem;
+    }
 }

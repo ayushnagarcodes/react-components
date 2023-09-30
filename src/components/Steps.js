@@ -24,8 +24,7 @@ export default function Steps() {
     }
 
     return (
-        <article className="component component--steps">
-            <h1>Steps</h1>
+        <>
             <button className="component__close-btn" onClick={handleStepsView}>
                 ✖
             </button>
@@ -53,7 +52,7 @@ export default function Steps() {
                     </article>
                 </section>
             )}
-        </article>
+        </>
     );
 }
 

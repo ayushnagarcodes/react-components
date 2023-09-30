@@ -16,36 +16,44 @@ const faqs = [
     },
 ];
 
-function Item({ num, title, text }) {
-    const [isOpen, setIsOpen] = useState(false);
+function Item({ num, title, selectedId, onItemClick, children }) {
+    const isOpen = num === selectedId;
 
     return (
         <div
             className={isOpen ? "item open" : "item"}
-            onClick={() => setIsOpen((isOpen) => !isOpen)}
+            onClick={() => onItemClick(num)}
         >
             <span className="number">{String(num).padStart(2, "0")}</span>
-            <h2 className="title">{title}</h2>
+            <p className="title">{title}</p>
             <span className="icon">{isOpen ? "-" : "+"}</span>
-            {isOpen && <p className="content-box">{text}</p>}
+            {isOpen && <p className="content-box">{children}</p>}
         </div>
     );
 }
 
 export default function Accordion() {
+    const [selectedId, setSelectedId] = useState(null);
+
+    function handleItemClick(id) {
+        selectedId === id ? setSelectedId(null) : setSelectedId(id);
+    }
+
     return (
-        <article className="component component--accordion">
-            <h1>Accordion</h1>
+        <>
             <div className="accordion">
                 {faqs.map((faq, i) => (
                     <Item
                         num={i + 1}
                         title={faq.title}
-                        text={faq.text}
+                        selectedId={selectedId}
+                        onItemClick={handleItemClick}
                         key={i + 1}
-                    />
+                    >
+                        {faq.text}
+                    </Item>
                 ))}
             </div>
-        </article>
+        </>
     );
 }

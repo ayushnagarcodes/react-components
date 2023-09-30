@@ -8,8 +8,7 @@ export default function DateCounter() {
     date.setDate(date.getDate() + count);
 
     return (
-        <article className="component component--date-counter">
-            <h1>Date Counter</h1>
+        <>
             <div className="container container--steps">
                 <button
                     className="container__btn"
@@ -47,6 +46,7 @@ export default function DateCounter() {
                     <span>+</span>
                 </button>
             </div>
+
             <p className="output">
                 {count > 0 &&
                     `${count} ${count === 1 ? "day" : "days"} from today is `}
@@ -57,6 +57,6 @@ export default function DateCounter() {
                 {count === 0 && `Today is `}
                 <span>{date.toDateString()}</span>
             </p>
-        </article>
+        </>
     );
 }

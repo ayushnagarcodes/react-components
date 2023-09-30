@@ -1,34 +1,33 @@
 import { useState } from "react";
 import "./TextExpander.css";
 
-export default function TextExpander() {
-    const [isOpen, setIsOpen] = useState(false);
-    const btnStyles = {
-        color: "rgb(11, 11, 150)",
-    };
-    const textStyles = {
-        width: "30ch",
-    };
+export default function TextExpander({
+    state = false,
+    words = 5,
+    btnColor = "#0b0b96",
+    children,
+}) {
+    const [isOpen, setIsOpen] = useState(state);
+    const wordArr = children.split(" ");
+    if (wordArr.length < words) {
+        words = wordArr.length;
+    }
 
     return (
-        <article className="component component--text-expander">
-            <h1>Text Expander</h1>
-
-            <div className={`container ${isOpen ? "" : "active"}`}>
-                <p>
-                    <span style={textStyles}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Molestias perspiciatis, qui ab sint ipsa asperiores
-                        nostrum rerum soluta eveniet voluptate!
-                    </span>
-                    <button
-                        style={btnStyles}
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen ? "Show less" : "Show more"}
-                    </button>
-                </p>
-            </div>
-        </article>
+        <div className="container">
+            <p>
+                <span>
+                    {isOpen
+                        ? children
+                        : wordArr.slice(0, words).join(" ") + "..."}
+                </span>
+                <button
+                    style={{ color: btnColor }}
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    {isOpen ? "Show less" : "Show more"}
+                </button>
+            </p>
+        </div>
     );
 }

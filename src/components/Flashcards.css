@@ -19,3 +19,9 @@
 .component--flashcards .container.active {
     background-color: #8c3bca;
 }
+
+@media screen and (max-width: 500px) {
+    .component--flashcards .grid-container {
+        gap: 2rem;
+    }
+}

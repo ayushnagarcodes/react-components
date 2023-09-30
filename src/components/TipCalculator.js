@@ -39,48 +39,40 @@ export default function TipCalculator() {
     }
 
     return (
-        <article className="component component--tip-calculator">
-            <h1>Tip Calculator</h1>
-
-            <div className="container">
-                <div className="input-container">
-                    <label>How much was the bill?</label>
-                    <input
-                        type="text"
-                        value={total}
-                        onChange={(e) =>
-                            setTotal(() =>
-                                isNaN(e.target.value)
-                                    ? 0
-                                    : Number(e.target.value)
-                            )
-                        }
-                    />
-                </div>
-                <SelectInput
-                    percentTip={percentTip}
-                    onSelectTip={(e) => setPercentTip(Number(e.target.value))}
-                >
-                    How did you like the service?
-                </SelectInput>
-                <SelectInput
-                    percentTip={friendPercentTip}
-                    onSelectTip={(e) =>
-                        setFriendPercentTip(Number(e.target.value))
+        <div className="container">
+            <div className="input-container">
+                <label>How much was the bill?</label>
+                <input
+                    type="text"
+                    value={total}
+                    onChange={(e) =>
+                        setTotal(() =>
+                            isNaN(e.target.value) ? 0 : Number(e.target.value)
+                        )
                     }
-                >
-                    How did your friend like the service?
-                </SelectInput>
-
-                {total > 0 && (
-                    <Output
-                        total={total}
-                        percentTip={percentTip}
-                        friendPercentTip={friendPercentTip}
-                        onReset={handleReset}
-                    />
-                )}
+                />
             </div>
-        </article>
+            <SelectInput
+                percentTip={percentTip}
+                onSelectTip={(e) => setPercentTip(Number(e.target.value))}
+            >
+                How did you like the service?
+            </SelectInput>
+            <SelectInput
+                percentTip={friendPercentTip}
+                onSelectTip={(e) => setFriendPercentTip(Number(e.target.value))}
+            >
+                How did your friend like the service?
+            </SelectInput>
+
+            {total > 0 && (
+                <Output
+                    total={total}
+                    percentTip={percentTip}
+                    friendPercentTip={friendPercentTip}
+                    onReset={handleReset}
+                />
+            )}
+        </div>
     );
 }
