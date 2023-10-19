@@ -1,0 +1,19 @@
+.component--currency-converter .container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 2rem 1rem;
+    justify-content: center;
+}
+
+.component--currency-converter input,
+.component--currency-converter select {
+    font-size: 16px;
+    padding: 0.4rem;
+    text-align: center;
+}
+
+.component--currency-converter .disabled {
+    background-color: rgb(239, 239, 239);
+    border: 1px solid black;
+    color: black;
+}

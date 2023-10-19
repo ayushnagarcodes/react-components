@@ -7,42 +7,40 @@ export default function StarRating() {
     const [tempRating, setTempRating] = useState(0);
 
     return (
-        <>
-            <div className="container">
-                <div className="input">
-                    <label>Enter number of stars to display: </label>
-                    <input
-                        type="number"
-                        value={numStars}
-                        min={1}
-                        max={20}
-                        onChange={(e) => {
-                            setNumStars(
-                                Number(e.target.value) > 20
-                                    ? 20
-                                    : Number(e.target.value)
-                            );
-                            setRating(0);
-                            setTempRating(0);
-                        }}
-                    />
-                </div>
-
-                <div className="stars">
-                    {Array.from({ length: numStars }, (_, i) => (
-                        <div
-                            key={i + 1}
-                            onClick={() => setRating(i + 1)}
-                            onMouseEnter={() => setTempRating(i + 1)}
-                            onMouseLeave={() => setTempRating(rating)}
-                        >
-                            {i + 1 <= tempRating ? <FullStar /> : <EmptyStar />}
-                        </div>
-                    ))}
-                    <span>{tempRating}</span>
-                </div>
+        <div className="container">
+            <div className="input">
+                <label>Enter number of stars to display: </label>
+                <input
+                    type="number"
+                    value={numStars}
+                    min={1}
+                    max={20}
+                    onChange={(e) => {
+                        setNumStars(
+                            Number(e.target.value) > 20
+                                ? 20
+                                : Number(e.target.value)
+                        );
+                        setRating(0);
+                        setTempRating(0);
+                    }}
+                />
             </div>
-        </>
+
+            <div className="stars">
+                {Array.from({ length: numStars }, (_, i) => (
+                    <div
+                        key={i + 1}
+                        onClick={() => setRating(i + 1)}
+                        onMouseEnter={() => setTempRating(i + 1)}
+                        onMouseLeave={() => setTempRating(rating)}
+                    >
+                        {i + 1 <= tempRating ? <FullStar /> : <EmptyStar />}
+                    </div>
+                ))}
+                <span>{tempRating}</span>
+            </div>
+        </div>
     );
 }
 

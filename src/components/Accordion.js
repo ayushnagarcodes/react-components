@@ -40,20 +40,18 @@ export default function Accordion() {
     }
 
     return (
-        <>
-            <div className="accordion">
-                {faqs.map((faq, i) => (
-                    <Item
-                        num={i + 1}
-                        title={faq.title}
-                        selectedId={selectedId}
-                        onItemClick={handleItemClick}
-                        key={i + 1}
-                    >
-                        {faq.text}
-                    </Item>
-                ))}
-            </div>
-        </>
+        <div className="accordion">
+            {faqs.map((faq, i) => (
+                <Item
+                    num={i + 1}
+                    title={faq.title}
+                    selectedId={selectedId}
+                    onItemClick={handleItemClick}
+                    key={i + 1}
+                >
+                    {faq.text}
+                </Item>
+            ))}
+        </div>
     );
 }

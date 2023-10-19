@@ -6,6 +6,7 @@ import Accordion from "./components/Accordion.js";
 import TipCalculator from "./components/TipCalculator.js";
 import DateCounter from "./components/DateCounter.js";
 import DateCounterV2 from "./components/DateCounterV2.js";
+import CurrencyConverter from "./components/CurrencyConverter.js";
 
 function ComponentLayout({ name, uniqueClass, children }) {
     return (
@@ -20,6 +21,13 @@ export default function App() {
     return (
         <main>
             <h1 className="main-heading"># React Mini Projects</h1>
+
+            <ComponentLayout
+                name="Currency Converter"
+                uniqueClass="component--currency-converter"
+            >
+                <CurrencyConverter />
+            </ComponentLayout>
 
             <ComponentLayout name="Steps" uniqueClass="component--steps">
                 <Steps />
