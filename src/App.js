@@ -6,6 +6,7 @@ import Accordion from "./components/Accordion.js";
 import TipCalculator from "./components/TipCalculator.js";
 import DateCounter from "./components/DateCounter.js";
 import DateCounterV2 from "./components/DateCounterV2.js";
+import Geolocator from "./components/Geolocator.js";
 import CurrencyConverter from "./components/CurrencyConverter.js";
 
 function ComponentLayout({ name, uniqueClass, children }) {
@@ -27,6 +28,13 @@ export default function App() {
                 uniqueClass="component--currency-converter"
             >
                 <CurrencyConverter />
+            </ComponentLayout>
+
+            <ComponentLayout
+                name="Geolocator"
+                uniqueClass="component--geolocator"
+            >
+                <Geolocator />
             </ComponentLayout>
 
             <ComponentLayout name="Steps" uniqueClass="component--steps">
