@@ -1,11 +1,11 @@
-import Steps from "./components/Steps.js";
-import StarRating from "./components/StarRating.js";
-import TextExpander from "./components/TextExpander.js";
-import Flashcards from "./components/Flashcards.js";
-import Accordion from "./components/Accordion.js";
-import TipCalculator from "./components/TipCalculator.js";
 import DateCounter from "./components/DateCounter.js";
 import DateCounterV2 from "./components/DateCounterV2.js";
+import TipCalculator from "./components/TipCalculator.js";
+import Accordion from "./components/Accordion.js";
+import Flashcards from "./components/Flashcards.js";
+import TextExpander from "./components/TextExpander.js";
+import StarRating from "./components/StarRating.js";
+import Steps from "./components/Steps.js";
 import Geolocator from "./components/Geolocator.js";
 import CurrencyConverter from "./components/CurrencyConverter.js";
 
@@ -90,17 +90,17 @@ export default function App() {
             </ComponentLayout>
 
             <ComponentLayout
-                name="Date Counter"
-                uniqueClass="component--date-counter"
-            >
-                <DateCounter />
-            </ComponentLayout>
-
-            <ComponentLayout
                 name="Date Counter V2"
                 uniqueClass="component--date-counter-v2"
             >
                 <DateCounterV2 />
+            </ComponentLayout>
+
+            <ComponentLayout
+                name="Date Counter"
+                uniqueClass="component--date-counter"
+            >
+                <DateCounter />
             </ComponentLayout>
         </main>
     );

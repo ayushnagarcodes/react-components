@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import "./DateCounterV2.css";
 
+const initialState = { count: 0, step: 1 };
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "increase":
+            return { ...state, count: state.count + state.step };
+        case "decrease":
+            return { ...state, count: state.count - state.step };
+        case "setCount":
+            return { ...state, count: action.payload };
+        case "setStep":
+            return { ...state, step: action.payload };
+        case "reset":
+            return initialState;
+        default:
+            throw new Error("Unknown action!");
+    }
+}
+
 export default function DateCounterV2() {
-    const [step, setStep] = useState(1);
-    const [count, setCount] = useState(0);
+    const [{ count, step }, dispatch] = useReducer(reducer, initialState);
     const date = new Date();
     date.setDate(date.getDate() + count);
-
-    function handleReset() {
-        setStep(() => 1);
-        setCount(() => 0);
-    }
 
     return (
         <>
@@ -21,11 +34,13 @@ export default function DateCounterV2() {
                     max={10}
                     value={step}
                     onChange={(e) =>
-                        setStep(() =>
-                            Number(e.target.value) >= 1
-                                ? Number(e.target.value)
-                                : 1
-                        )
+                        dispatch({
+                            type: "setStep",
+                            payload:
+                                Number(e.target.value) >= 1
+                                    ? Number(e.target.value)
+                                    : 1,
+                        })
                     }
                 />
                 <span>{step}</span>
@@ -34,22 +49,27 @@ export default function DateCounterV2() {
             <div className="container container--count">
                 <button
                     className="container__btn"
-                    onClick={() => setCount((count) => count - step)}
+                    onClick={() => dispatch({ type: "decrease" })}
                 >
                     <span>-</span>
                 </button>
+
                 <input
                     type="text"
                     value={count}
                     onChange={(e) =>
-                        setCount(() =>
-                            isNaN(e.target.value) ? "-" : Number(e.target.value)
-                        )
+                        dispatch({
+                            type: "setCount",
+                            payload: isNaN(e.target.value)
+                                ? "-"
+                                : Number(e.target.value),
+                        })
                     }
                 />
+
                 <button
                     className="container__btn"
-                    onClick={() => setCount((count) => count + step)}
+                    onClick={() => dispatch({ type: "increase" })}
                 >
                     <span>+</span>
                 </button>
@@ -67,7 +87,10 @@ export default function DateCounterV2() {
             </p>
 
             {(step !== 1 || count !== 0) && (
-                <button className="reset-btn" onClick={handleReset}>
+                <button
+                    className="reset-btn"
+                    onClick={() => dispatch({ type: "reset" })}
+                >
                     Reset
                 </button>
             )}
