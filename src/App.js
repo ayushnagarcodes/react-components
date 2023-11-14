@@ -1,13 +1,14 @@
-import DateCounter from "./components/DateCounter.js";
-import DateCounterV2 from "./components/DateCounterV2.js";
-import TipCalculator from "./components/TipCalculator.js";
-import Accordion from "./components/Accordion.js";
-import Flashcards from "./components/Flashcards.js";
-import TextExpander from "./components/TextExpander.js";
-import StarRating from "./components/StarRating.js";
-import Steps from "./components/Steps.js";
-import Geolocator from "./components/Geolocator.js";
-import CurrencyConverter from "./components/CurrencyConverter.js";
+import DateCounter from "./components/DateCounter/DateCounter.js";
+import DateCounterV2 from "./components/DateCounterV2/DateCounterV2.js";
+import TipCalculator from "./components/TipCalculator/TipCalculator.js";
+import Accordion from "./components/Accordion/Accordion.js";
+import Flashcards from "./components/Flashcards/Flashcards.js";
+import TextExpander from "./components/TextExpander/TextExpander.js";
+import StarRating from "./components/StarRating/StarRating.js";
+import Steps from "./components/Steps/Steps.js";
+import BankAccount from "./components/BankAccount/BankAccount.js";
+import Geolocator from "./components/Geolocator/Geolocator.js";
+import CurrencyConverter from "./components/CurrencyConverter/CurrencyConverter.js";
 
 function ComponentLayout({ name, uniqueClass, children }) {
     return (
@@ -35,6 +36,13 @@ export default function App() {
                 uniqueClass="component--geolocator"
             >
                 <Geolocator />
+            </ComponentLayout>
+
+            <ComponentLayout
+                name="useReducer Bank Account"
+                uniqueClass="component--bank-account"
+            >
+                <BankAccount />
             </ComponentLayout>
 
             <ComponentLayout name="Steps" uniqueClass="component--steps">
