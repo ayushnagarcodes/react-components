@@ -1,0 +1,28 @@
+.component--infinite-scroll .container {
+    height: 50rem;
+    overflow: auto;
+}
+
+.component--infinite-scroll h2 {
+    color: inherit;
+}
+
+.component--infinite-scroll .gridContainer {
+    padding: 0 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2.4rem;
+    text-wrap: balance;
+}
+
+.component--infinite-scroll .gridContainer div {
+    padding: 2.4rem 2.4rem 1rem;
+    display: grid;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2rem;
+}
+
+.component--infinite-scroll .gridContainer > div:last-child {
+    color: blueviolet;
+}

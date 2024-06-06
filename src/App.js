@@ -9,6 +9,7 @@ import Steps from "./components/Steps/Steps.js";
 import BankAccount from "./components/BankAccount/BankAccount.js";
 import Geolocator from "./components/Geolocator/Geolocator.js";
 import CurrencyConverter from "./components/CurrencyConverter/CurrencyConverter.js";
+import InfiniteScroll from "./components/InfiniteScroll/InfiniteScroll.js";
 
 function ComponentLayout({ name, uniqueClass, children }) {
     return (
@@ -23,6 +24,13 @@ export default function App() {
     return (
         <main>
             <h1 className="main-heading"># React Mini Projects</h1>
+
+            <ComponentLayout
+                name="Infinite Scroll"
+                uniqueClass="component--infinite-scroll"
+            >
+                <InfiniteScroll />
+            </ComponentLayout>
 
             <ComponentLayout
                 name="Currency Converter"
